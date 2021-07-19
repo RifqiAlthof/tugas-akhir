@@ -40,43 +40,11 @@
 
             <?php if ($user->status == 0 ) : ?>
               
-              <?php
-              $gusmint = date('Y-m-d H:i:s');
-              $hasil = mysqli_query($koneksi,"SELECT * FROM tanggal");
-              $tgl = mysqli_fetch_array($hasil);
-              $cendekia = $tgl['tanggal'];
-              $bangka = mysqli_query($koneksi,"SELECT * FROM selesai");
-              $tutup = mysqli_fetch_array($bangka);
-              $wes = $tutup['selesai'];
-
-              if ($gusmint > $wes){
-              echo"
-
               <a href="#" class="btn btn-success btn-sm" data-nama_kandidat="<?php echo $knd->nama_kandidat ?>" data-id_user="<?php echo $this->session->userdata('id'); ?>">Pilih <?php echo $knd->nama_kandidat ?></a>
-              <center><h2 style='color:red;align:center;padding: 10px; border-radius: 15px; width: 100%;'><strong>- waktu pemilihan sudah ditutup -</strong></h2></center>
-                ";
-                }
-                elseif ($gusmint >= $cendekia){
-
-                  echo"
-
-              <a href="#" class="btn btn-success btn-sm" data-nama_kandidat="<?php echo $knd->nama_kandidat ?>" data-id_user="<?php echo $this->session->userdata('id'); ?>">Pilih <?php echo $knd->nama_kandidat ?></a>
-
-                  ";
-                  }
-                  else{
-  echo"
-              <a href="#" class="btn btn-success btn-sm" data-nama_kandidat="<?php echo $knd->nama_kandidat ?>" data-id_user="<?php echo $this->session->userdata('id'); ?>">Pilih <?php echo $knd->nama_kandidat ?></a>
-              <center><h2 style='color:red;align:center;padding: 10px; border-radius: 15px; width: 100%;'><strong>- belum saatnya pemilihan -</strong></h2></center>
-    ";
-}
-?>
-
             <?php else : ?>
               <button class="btn btn-success btn-sm" disabled>Pilih <?php echo $knd->nama_kandidat ?></button>
             <?php endif; ?>
 
-            
             
           </div>
       </div>

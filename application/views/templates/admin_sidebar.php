@@ -51,9 +51,8 @@
 					<a href="<?php echo site_url('admin/user'); ?>">
 						<i class="fa fa-user"></i> <span>User</span>
 					</a>
-				</li>
-				<li class=" <?php echo $this->uri->segment(2) == 'user' ? 'active' : '' ?>">
-					<a href="<?php echo site_url('admin/user'); ?>">
+				</li><li class=" <?php echo $this->uri->segment(2) == 'pengaturan' ? 'active' : '' ?>">
+					<a href="<?php echo site_url('admin/pengaturan'); ?>">
 						<i class="fa fa-user"></i> <span>Pengaturan</span>
 					</a>
 				</li>
