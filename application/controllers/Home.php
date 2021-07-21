@@ -18,6 +18,17 @@ class Home extends CI_Controller
 		$data['kandidat2'] = $this->db->get_where('suara', ['nama_kandidat' => 'calon ke-2'])->num_rows();
 		$data['kandidat3'] = $this->db->get_where('suara', ['nama_kandidat' => 'calon ke-3'])->num_rows();
 		$data['user'] = $this->db->get_where('user', ['id' => $this->session->userdata('id')])->row();
+
+		$d = $this->db->query("SELECT * from setting")->row();
+		$today = date('Y-m-d h:i:s');
+		$mulai = date('Y-m-d h:i:s', strtotime($d->mulai));
+		$selesai = date('Y-m-d h:i:s', strtotime($d->selesai));
+
+		$data['waktu'] =[
+			'today' => $today,
+			'mulai' => $mulai,
+			'selesai' => $selesai
+		];
 		$this->load->view('templates/header', $data);
 		$this->load->view('home', $data);
 		$this->load->view('templates/footer');
