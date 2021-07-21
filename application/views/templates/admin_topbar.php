@@ -33,7 +33,7 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<? php echo base_url('assets/img/download.png'); ?>" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url('assets/img/download.png'); ?>" class="img-circle" alt="User Image">
 
                 <p>
                   <?php echo $this->session->userdata('nama'); ?> - Web Developer
@@ -55,4 +55,3 @@
       </div>
     </nav>
   </header>
-  

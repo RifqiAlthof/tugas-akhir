@@ -22,4 +22,9 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function pass()
+	{
+		echo password_hash('admin', PASSWORD_DEFAULT);
+	}
 }

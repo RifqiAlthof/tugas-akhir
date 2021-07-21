@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends CI_Controller
+{
 
 	public function _construct()
 	{
@@ -25,8 +26,8 @@ class Home extends CI_Controller {
 	public function visimisi($id_kandidat)
 	{
 		$data['title'] = 'Visi & Misi';
-		$data['kandidat'] = $this->db->get_where('kandidat',['id' => $id_kandidat])->row();
-		$data['visimisi'] = $this->db->get_where('visimisi',['id_kandidat' => $id_kandidat])->row();
+		$data['kandidat'] = $this->db->get_where('kandidat', ['id' => $id_kandidat])->row();
+		$data['visimisi'] = $this->db->get_where('visimisi', ['id_kandidat' => $id_kandidat])->row();
 		$this->load->view('templates/header', $data);
 		$this->load->view('visimisi', $data);
 		$this->load->view('templates/footer');
@@ -39,7 +40,7 @@ class Home extends CI_Controller {
 		$this->HomeModel->update_status_user();
 		if ($this->db->affected_rows() > 0) {
 			$result = ['success' => true];
-		}else{
+		} else {
 			$result = ['success' => false];
 		}
 
@@ -52,7 +53,7 @@ class Home extends CI_Controller {
 		$this->load->view('templates/header2', $data);
 		$this->load->view('templates/profil2');
 		$this->load->view('templates/footer');
-	
+
 	}
 
 
@@ -64,7 +65,7 @@ class Home extends CI_Controller {
 		$this->load->view('templates/admin_sidebar');
 		$this->load->view('admin/pengaturan');
 		$this->load->view('templates/admin_footer');
-	
+
 	}
 
 
