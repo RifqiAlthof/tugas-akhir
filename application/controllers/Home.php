@@ -56,7 +56,6 @@ class Home extends CI_Controller
 
 	}
 
-
 	public function pengaturan()
 	{
 		$data['title'] = 'Pengaturan';
@@ -65,9 +64,7 @@ class Home extends CI_Controller
 		$this->load->view('templates/admin_sidebar');
 		$this->load->view('admin/pengaturan');
 		$this->load->view('templates/admin_footer');
-
 	}
-
 
 }
 
