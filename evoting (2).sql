@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Jul 2021 pada 08.49
+-- Waktu pembuatan: 21 Jul 2021 pada 08.33
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 8.0.1
 
@@ -66,6 +66,18 @@ INSERT INTO `rt` (`id`, `nama`) VALUES
 (47, 'RT V / RW III'),
 (48, 'RT VI / RW II'),
 (49, 'RT VII / RW I');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `setting`
+--
+
+CREATE TABLE `setting` (
+  `id` int(11) NOT NULL,
+  `mulai` datetime NOT NULL,
+  `selesai` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -158,6 +170,12 @@ ALTER TABLE `rt`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `setting`
+--
+ALTER TABLE `setting`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `suara`
 --
 ALTER TABLE `suara`
@@ -190,6 +208,12 @@ ALTER TABLE `kandidat`
 --
 ALTER TABLE `rt`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+--
+-- AUTO_INCREMENT untuk tabel `setting`
+--
+ALTER TABLE `setting`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `suara`
