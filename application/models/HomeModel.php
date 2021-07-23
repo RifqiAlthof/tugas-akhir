@@ -20,4 +20,15 @@ class HomeModel extends CI_Model {
 		$this->db->update('user', $data);
 	}
 
+		 public function simpan()
+    {   
+        $data = [
+            'id' => $this->input->post('id'),
+            'mulai' => $this->input->post('mulai', true),
+            'selesai' => $this->input->post('selesai', true),
+            
+        ];
+        $this->db->insert('setting', $data);
+    }
+
 }

@@ -9,7 +9,7 @@
             <!-- /.box-header -->
             <div class="box-body">
 
-              <form action="<?php echo site_url('admin/user/simpan'); ?>" method="post">
+              <form action="<?php echo site_url('admin/home/simpan'); ?>" method="post">
 
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
           </div>

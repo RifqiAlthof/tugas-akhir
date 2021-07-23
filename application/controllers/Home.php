@@ -77,6 +77,20 @@ class Home extends CI_Controller
 		$this->load->view('templates/admin_footer');
 	}
 
+	public function simpan()
+	{
+		$this->HomeModel->simpan();
+		if ($this->db->affected_rows() > 0) {
+			$this->session->set_flashdata('message', '
+				<div class="alert alert-warning alert-dismissible ">
+                	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+               		<h4><i class="icon fa fa-warning"></i> Berhasil disimpan</h4>		
+              </div>
+				');
+			redirect('admin/pengaturan');
+		}
+	}
+
 }
 
 /* End of file Home.php */
